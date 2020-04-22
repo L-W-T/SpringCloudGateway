@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: apprnetinterface
+        uri: lb://ApprNetInterface/
+        predicates:
+        - Path=/ApprNetInterface/**
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:1111/springboot/eureka/
